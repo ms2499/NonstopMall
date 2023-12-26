@@ -1,0 +1,10 @@
+RUN $SYSTEM.ZMXODBC.MXOAS /NAME $TEMXO, NOWAIT, TERM $ZHOME, CPU 0/ -pn 17635 -ip 172.16.82.2
+RUN $SYSTEM.ZMXODBC.MXOAS /NAME $TEMXO, NOWAIT, TERM $ZHOME, CPU 0/ -pn 22773
+
+climcmd nclim000 -Provider ztc0 netstat --ip --all --numeric ~| grep ':22773'
+climcmd nclim000 -Provider ztc0 netstat --ip --all --numeric ~| grep ':8080'
+
+SET CATALOG NONSTOP_SQLMX_NSX;
+SET SCHEMA MXCS_SCHEMA;
+
+control query default infer_charset 'on';

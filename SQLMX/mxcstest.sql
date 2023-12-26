@@ -1,0 +1,20 @@
+ADD DS $TEMXO."MALLDS", MaxServer 30, IdleServer 5, InitServer 10, IdleTimeout SYSTEM_DEFAULT, ConnTimeout 60;
+
+ADD EVAR $TEMXO."MALLDS".EMPLOYEE, type define, value'
+CLASS MAP, FILE $DATA01.PERSNL.EMPLOYEE';
+CS>ADD EVAR DEPT, type define, value 'CLASS MAP, FILE $DATA02.PERSNL.DEPT';
+CS>ADD EVAR HIST_NO_STATS_ROWCOUNT, value '123456789';
+CS>ADD EVAR HIST_NO_STATS_UEC, value '99';
+CS>ADD EVAR QUERY_CACHE, value '10000';
+CS>ADD EVAR QUERY_CACHE_MAX_VICTIMS, value '100';
+CS>ADD EVAR QUERY_CACHE_STATISTICS, value 'ON';
+CS>ADD EVAR QUERY_CACHE_STATISTICS_FILE, value '/home/testcachefiles/myStats';
+CS>ADD EVAR TIMEOUT, value 'RESET';
+CS>ADD EVAR SCRATCH_DISKS, value '$data01, $data02, \testsys.$data03';
+CS>ADD EVAR "* TIMEOUT", prefix 'control table', value '3000';
+CS>ADD EVAR "PERSNL.JOB MDAM", prefix 'control table', value 'OFF';
+CS>ADD EVAR "ESTIMATED COST", type rmp, limit 123456, action STOP;
+CS>ADD EVAR $TEMXO."MALLDS".CATALOG, type set, value 'MALLCAT';
+CS>ADD EVAR $TEMXO."MALLDS".SCHEMA, type set, value 'MALLSCH';
+CS>ADD EVAR MPLOC, type set, value '$DATA03.PERSNL';
+
