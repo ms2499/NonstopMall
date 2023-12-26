@@ -7,6 +7,6 @@ climcmd nclim000 -Provider ztc0 netstat --ip --all --numeric ~| grep ':8080'
 SET CATALOG NONSTOP_SQLMX_NSX;
 SET SCHEMA SYSTEM_SCHEMA;
 SET SCHEMA DEFINITION_SCHEMA_VERSION_3700;
-SET SCHEMA MXCS_SCHEMA;
+SET SCHEMA MXCS_SCHEMA; 
 
 control query default infer_charset 'on';
