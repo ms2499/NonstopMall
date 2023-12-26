@@ -9,4 +9,4 @@ SET SCHEMA SYSTEM_SCHEMA;
 SET SCHEMA DEFINITION_SCHEMA_VERSION_3700;
 SET SCHEMA MXCS_SCHEMA; 
 
-control query default infer_charset 'on';
+control query default infer_charset 'on'; 
